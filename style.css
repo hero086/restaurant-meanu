@@ -1,79 +1,51 @@
+/* Background setup */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-image: url('https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #333;
-  min-height: 100vh;
-  position: relative;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=1189&auto=format&fit=crop&ixlib=rb-4.1.0');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background steady while scrolling */
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  pointer-events: none;
-  z-index: 0;
+/* Menu container */
+.menu {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* semi-transparent white background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    overflow-y: auto; /* Enable vertical scrolling if menu gets too long */
+    max-height: 80vh; /* Prevents it from going off-screen */
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 1;
+/* Menu headings */
+.menu h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.restaurant {
-  background: rgba(255, 248, 240, 0.95);
-  padding: 20px;
-  margin: 0 auto 40px auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  max-width: 600px;
-  border: 2px solid #d4b483;
-  position: relative;
-  z-index: 1;
-}
-
-.restaurant h2 {
-  margin-top: 0;
-  color: #8c4843;
-  font-family: Georgia, serif;
-  border-bottom: 2px solid #d4b483;
-  padding-bottom: 5px;
-}
-
-.filter-buttons { text-align: center; margin-bottom: 15px; }
-.filter-buttons button {
-  margin: 5px;
-  padding: 8px 12px;
-  border: none;
-  background-color: #8c4843;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
+/* Menu items */
 .menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px dotted #d4b483;
-  font-family: Georgia, serif;
-  font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
 }
 
-.menu-item .name { font-weight: bold; color: #444; }
-.menu-item .price { color: #8c4843; font-weight: bold; }
-
-@media (max-width: 640px) {
-  body { padding: 12px; }
-  .restaurant { margin: 0 10px 30px; max-width: none; }
+.menu-item:last-child {
+    border-bottom: none;
 }
+
+/* Menu item name */
+.menu-item-name {
+    font-weight: bold;
+}
+
+/* Menu item price */
+.menu-item-price {
+    color: #444;
+}
+
